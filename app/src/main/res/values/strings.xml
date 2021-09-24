@@ -1,3 +1,28 @@
 <resources>
-    <string name="app_name">Listify</string>
+    <string name="app_name">LISTIFY</string>
+    <string name="btn_add_task">Add Task</string>
+    <string name="btn_my_day">My Day</string>
+    <string name="btn_important">Important</string>
+    <string name="btn_planned">Planned</string>
+    <string name="bnt_lists">Lists</string>
+    <string name="tasks">Tasks</string>
+    <string name="my_day">My Day</string>
+    <string name="date">Date</string>
+    <string name="btn_add">Add</string>
+    <string name="add_task">Add Task</string>
+    <string name="location">Location</string>
+    <string name="btn_back">back</string>
+    <string name="add_title">Title</string>
+    <string name="add_location">Location</string>
+    <string name="add_date">Date</string>
+    <string name="add_start_time">Start Time</string>
+    <string name="add_end_time">End Time</string>
+    <string name="add_repeat">Repeat</string>
+    <string name="add_description">Description</string>
+    <string name="add_to_list">Add To List</string>
+    <string name="important">Important</string>
+    <string name="btn_update">Update</string>
+    <string name="total_time">Total time - </string>
+    <string name="username">Username</string>
+    <string name="email">email</string>
 </resources>
