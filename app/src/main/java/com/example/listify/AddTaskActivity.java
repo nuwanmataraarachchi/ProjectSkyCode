@@ -33,7 +33,15 @@ public class AddTaskActivity extends AppCompatActivity {
         if(title.isEmpty()){
             Toast.makeText(this, "Enter title", Toast.LENGTH_SHORT).show();
         }else{
-            dbHelper.addTask(title,date,start_time,end_time);
+            long inserted = dbHelper.addTask(title,date,start_time,end_time);
+
+            if(inserted>0){
+                Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, "Retry", Toast.LENGTH_SHORT).show();
+
+
+            }
         }
 
     }
