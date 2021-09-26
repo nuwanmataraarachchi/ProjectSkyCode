@@ -1,9 +1,12 @@
 package com.example.listify;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +18,7 @@ public class CustomAdapterTask extends RecyclerView.Adapter<CustomAdapterTask.My
 
     private Context context;
     private ArrayList task_id, title, date, startTime, endTime;
+
 
     CustomAdapterTask(Context context, ArrayList task_id, ArrayList title, ArrayList date, ArrayList startTime,
                       ArrayList endTime){
@@ -35,8 +39,22 @@ public class CustomAdapterTask extends RecyclerView.Adapter<CustomAdapterTask.My
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
+
         holder.task_title.setText(String.valueOf(title.get(position)));
+        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, TaskDetailsActivity.class);
+                intent.putExtra("id", String.valueOf(task_id.get(position)));
+                intent.putExtra("title", String.valueOf(title.get(position)));
+                intent.putExtra("date", String.valueOf(date.get(position)));
+                intent.putExtra("startTime", String.valueOf(startTime.get(position)));
+                intent.putExtra("endTime", String.valueOf(endTime.get(position)));
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -44,13 +62,15 @@ public class CustomAdapterTask extends RecyclerView.Adapter<CustomAdapterTask.My
         return task_id.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView task_title;
+        LinearLayout mainLayout;
 
-        public MyViewHolder(@NonNull View itemView) {
+        MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            task_title = itemView.findViewById((R.id.task_title));
+            task_title = itemView.findViewById(R.id.task_title);
+            mainLayout = itemView.findViewById(R.id.mainLayout);
         }
     }
 }

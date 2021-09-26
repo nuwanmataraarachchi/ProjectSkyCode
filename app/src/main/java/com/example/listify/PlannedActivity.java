@@ -15,7 +15,6 @@ import java.util.ArrayList;
 public class PlannedActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-
     DBHelperTasks myDB;
     ArrayList<String> task_id, title, date, startTime, endTime;
     CustomAdapterTask customAdapter;
