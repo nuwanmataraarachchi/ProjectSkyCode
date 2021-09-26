@@ -5,10 +5,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 public class DBHelperTasks extends SQLiteOpenHelper {
+
+    private Context context;
 
     public static final String DATABASE_NAME = "Listify.db";
 
@@ -50,13 +53,40 @@ public class DBHelperTasks extends SQLiteOpenHelper {
     }
 
     public Cursor readAllData(){
-        String quary = "SELECT * FROM " + Master.Tasks.TABLE_NAME;
+        String quarry = "SELECT * FROM " + Master.Tasks.TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;
         if(db != null){
-            cursor = db.rawQuery(quary, null);
+            cursor = db.rawQuery(quarry, null);
         }
         return cursor;
+    }
+
+    public void updateTask(String row_id, String title, String date, String startTime, String endTime, String duration ){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(Master.Tasks.COLUMN_NAME_TITLE, title);
+        cv.put(Master.Tasks.COLUMN_NAME_DATE, date);
+        cv.put(Master.Tasks.COLUMN_NAME_START_TIME, startTime);
+        cv.put(Master.Tasks.COLUMN_NAME_END_TIME, endTime);
+        cv.put(Master.Tasks.COLUMN_NAME_DURATION, duration);
+
+        long result =  db.update(Master.Tasks.TABLE_NAME, cv, "_id=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Failed to Update", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Successfully Updated", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void deleteTask(String row_id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        long result = db.delete(Master.Tasks.TABLE_NAME, "_id=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Failed to Delete", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Successfully Deleted", Toast.LENGTH_SHORT).show();
+        }
     }
 }

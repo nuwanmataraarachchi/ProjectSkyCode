@@ -68,7 +68,6 @@ public class AddTaskActivity extends AppCompatActivity {
                 Toast.makeText(this, "Retry", Toast.LENGTH_SHORT).show();
             }
         }
-
     }
 
 }

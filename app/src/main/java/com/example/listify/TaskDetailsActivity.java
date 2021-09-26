@@ -8,12 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.listify.database.DBHelperTasks;
+
 public class TaskDetailsActivity extends AppCompatActivity {
 
     EditText add_title, add_date, add_startTime, add_endTime;
     Button btn_update;
 
-    String id, title, date, start_time, end_time;
+    String id, title, date, start_time, end_time, duration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,5 +46,15 @@ public class TaskDetailsActivity extends AppCompatActivity {
             add_title.setText(title);
 
         }else Toast.makeText(this, "No Data", Toast.LENGTH_SHORT).show();
+    }
+
+    public void update(View view){
+        DBHelperTasks dbHelper = new DBHelperTasks(TaskDetailsActivity.this);
+        dbHelper.updateTask(id,title,date,start_time,end_time,duration);
+    }
+
+    public void delete(View view){
+        DBHelperTasks dbHelper = new DBHelperTasks(TaskDetailsActivity.this);
+        dbHelper.deleteTask(id);
     }
 }

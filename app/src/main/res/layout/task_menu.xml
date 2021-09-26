@@ -11,7 +11,7 @@
         android:layout_width="220dp"
         android:layout_height="65dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="67dp"
         android:layout_marginEnd="44dp"
         android:backgroundTint="@color/purple"
         android:onClick="openAddTask"
@@ -42,22 +42,6 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_add_task" />
 
     <Button
-        android:id="@+id/btn_important"
-        android:layout_width="220dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="44dp"
-        android:backgroundTint="@color/purple"
-        android:onClick="openImportantTasks"
-        android:text="@string/btn_important"
-        android:textAllCaps="false"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_my_day" />
-
-    <Button
         android:id="@+id/btn_planned"
         android:layout_width="220dp"
         android:layout_height="65dp"
@@ -71,7 +55,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_important" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_my_day" />
 
     <Button
         android:id="@+id/bnt_lists"
@@ -107,7 +91,7 @@
         android:layout_width="39dp"
         android:layout_height="32dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="48dp"
         android:contentDescription="@string/btn_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -118,7 +102,7 @@
         android:layout_width="159dp"
         android:layout_height="87dp"
         android:layout_marginStart="62dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="128dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
