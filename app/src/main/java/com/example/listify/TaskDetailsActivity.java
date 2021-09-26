@@ -48,13 +48,4 @@ public class TaskDetailsActivity extends AppCompatActivity {
         }else Toast.makeText(this, "No Data", Toast.LENGTH_SHORT).show();
     }
 
-    public void update(View view){
-        DBHelperTasks dbHelper = new DBHelperTasks(TaskDetailsActivity.this);
-        dbHelper.updateTask(id,title,date,start_time,end_time,duration);
-    }
-
-    public void delete(View view){
-        DBHelperTasks dbHelper = new DBHelperTasks(TaskDetailsActivity.this);
-        dbHelper.deleteTask(id);
-    }
 }
