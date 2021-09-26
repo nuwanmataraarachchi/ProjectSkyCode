@@ -22,13 +22,14 @@ public class DBHelperTasks extends SQLiteOpenHelper {
                         Master.Tasks.COLUMN_NAME_TITLE+ " TEXT," +
                         Master.Tasks.COLUMN_NAME_DATE+ " TEXT," +
                         Master.Tasks.COLUMN_NAME_START_TIME+ " TEXT," +
-                        Master.Tasks.COLUMN_NAME_END_TIME+ " TEXT)";
+                        Master.Tasks.COLUMN_NAME_END_TIME+ " TEXT," +
+                        Master.Tasks.COLUMN_NAME_DURATION+ " TEXT)";
 
         db.execSQL(SQL_CREATE_ENTRIES);
 
     }
 
-    public long addTask(String title, String date, String startTime, String endTime){
+    public long addTask(String title, String date, String startTime, String endTime, String duration){
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -37,6 +38,7 @@ public class DBHelperTasks extends SQLiteOpenHelper {
         values.put(Master.Tasks.COLUMN_NAME_DATE, date);
         values.put(Master.Tasks.COLUMN_NAME_START_TIME, startTime);
         values.put(Master.Tasks.COLUMN_NAME_END_TIME, endTime);
+        values.put(Master.Tasks.COLUMN_NAME_DURATION, duration);
 
         return db.insert(Master.Tasks.TABLE_NAME, null, values);
 

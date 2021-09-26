@@ -10,7 +10,7 @@
         android:id="@+id/add_task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="32dp"
         android:text="@string/add_task"
         android:textColor="#000000"
         android:textSize="34sp"
@@ -22,41 +22,18 @@
         android:layout_width="39dp"
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="38dp"
         android:contentDescription="@string/btn_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/btn_back" />
 
     <EditText
-        android:id="@+id/add_repeat"
-        android:layout_width="354dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="28dp"
-        android:backgroundTint="@color/purple_700"
-        android:ems="10"
-        android:hint="@string/add_repeat"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_end_time" />
-
-    <EditText
-        android:id="@+id/add_to_list"
-        android:layout_width="354dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="28dp"
-        android:backgroundTint="@color/purple_700"
-        android:ems="10"
-        android:hint="@string/add_to_list"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_description" />
-
-    <EditText
         android:id="@+id/add_end_time"
         android:layout_width="354dp"
         android:layout_height="49dp"
         android:layout_marginStart="28dp"
+        android:layout_marginTop="5dp"
         android:backgroundTint="@color/purple_700"
         android:ems="10"
         android:hint="@string/add_end_time"
@@ -69,6 +46,7 @@
         android:layout_width="354dp"
         android:layout_height="49dp"
         android:layout_marginStart="28dp"
+        android:layout_marginTop="5dp"
         android:backgroundTint="@color/purple_700"
         android:ems="10"
         android:hint="@string/add_start_time"
@@ -81,19 +59,20 @@
         android:layout_width="354dp"
         android:layout_height="49dp"
         android:layout_marginStart="28dp"
+        android:layout_marginTop="5dp"
         android:backgroundTint="@color/purple_700"
         android:ems="10"
         android:hint="@string/add_date"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_location" />
+        app:layout_constraintTop_toBottomOf="@+id/add_title" />
 
     <EditText
         android:id="@+id/add_title"
         android:layout_width="354dp"
         android:layout_height="49dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="80dp"
         android:backgroundTint="@color/purple_700"
         android:ems="10"
         android:hint="@string/add_title"
@@ -101,52 +80,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_task" />
 
-    <EditText
-        android:id="@+id/add_location"
-        android:layout_width="354dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="28dp"
-        android:backgroundTint="@color/purple_700"
-        android:ems="10"
-        android:hint="@string/add_location"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_title" />
-
     <Button
         android:id="@+id/btn_add"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="155dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#2100DC"
         android:onClick="saveTask"
         android:text="@string/btn_add"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_to_list" />
-
-    <EditText
-        android:id="@+id/add_description"
-        android:layout_width="354dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="28dp"
-        android:backgroundTint="@color/purple_700"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="@string/add_description"
-        android:inputType="textMultiLine"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_repeat" />
-
-    <CheckBox
-        android:id="@+id/important"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:text="@string/important"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_to_list" />
+        app:layout_constraintTop_toBottomOf="@+id/add_end_time" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
